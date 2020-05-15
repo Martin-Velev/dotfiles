@@ -2,12 +2,12 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/jojo/.oh-my-zsh"
+export ZSH="/Users/mvelev/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="af-magic"
 
 # Set list of themes to pick from when loading at random
@@ -26,8 +26,14 @@ ZSH_THEME="af-magic"
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS=true
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -62,9 +68,7 @@ ZSH_THEME="af-magic"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -85,8 +89,9 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+# Bindings
+bindkey -v
+export KEYTIMEOUT=1
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -96,5 +101,28 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 alias zconf="vim ~/.zshrc"
 alias zsource="source ~/.zshrc"
-alias vconf="vim ~/.vimrc"
+alias whc="cd ~/Code/whc"
 alias co="cd ~/Code"
+alias pip="pip3"
+alias sandbox="code ~/Code/sandbox"
+alias notes="code ~/Notes"
+alias nnote="code ~/Notes/NEW_NOTE.md"
+alias stack="code ~/Notes/STACK.md"
+
+alias gconf="vim ~/.gitconfig"
+alias nuke-docker="docker system prune --all"
+alias sbfe="code ~/Code/scoreboards-fe"
+alias rails="RUBYOPT='-W:no-deprecated -W:no-experimental' rails"
+alias db:reset="rails db:migrate VERSION=0"
+alias impretty="cp ~/.dotfiles/.prettierrc ."
+alias nodemon="npx nodemon"
+alias cra="npx create-react-app" 
+alias codit="code ~/Code/workspaces/UsualSuspects.code-workspace"
+
+alias py="python3"
+
+source $HOME/.zshenv
+eval "$(rbenv init - zsh)"
+
+set PATH $HOME/.jenv/bin $PATH
+
